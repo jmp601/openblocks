@@ -40,17 +40,17 @@ spec:
             - name: openblocks-node
               containerPort: 6060
               protocol: TCP
-# Uncomment when /status endpoint is implemented
-#          livenessProbe:
-#            initialDelaySeconds: 15
-#            httpGet:
-#              path: /plugins
-#              port: openblocks-node
-#          readinessProbe:
-#            initialDelaySeconds: 15
-#            httpGet:
-#              path: /plugins
-#              port: openblocks-node
+  # Uncomment when /status endpoint is implemented
+  #          livenessProbe:
+  #            initialDelaySeconds: 15
+  #            httpGet:
+  #              path: /plugins
+  #              port: openblocks-node
+  #          readinessProbe:
+  #            initialDelaySeconds: 15
+  #            httpGet:
+  #              path: /plugins
+  #              port: openblocks-node
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
